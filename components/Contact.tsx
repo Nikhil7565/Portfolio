@@ -3,6 +3,7 @@
 import { ArrowRight, Download, Mail, Phone } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { site } from "@/data/site";
+import { withBase } from "@/lib/utils";
 
 export function Contact() {
   const mailHref = `mailto:${site.email}`;
@@ -26,7 +27,7 @@ export function Contact() {
             <ArrowRight size={16} className="transition duration-300 group-hover:translate-x-1" />
           </a>
           <a
-            href={site.resumeHref}
+            href={withBase(site.resumeHref)}
             className="btn-ghost w-full sm:w-auto"
             download
             target="_blank"

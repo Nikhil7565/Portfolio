@@ -1,5 +1,6 @@
 import { Logo } from "@/components/Logo";
 import { site } from "@/data/site";
+import { withBase } from "@/lib/utils";
 
 export function Footer() {
   return (
@@ -23,7 +24,13 @@ export function Footer() {
           <a href={`tel:${site.phone.replace(/\s+/g, "")}`} className="hover:text-ink">
             Phone
           </a>
-          <a href={site.resumeHref} download target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+          <a
+            href={withBase(site.resumeHref)}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-ink"
+          >
             Resume
           </a>
         </div>

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, withBase } from "@/lib/utils";
 
 type LogoProps = {
   /** full = complete brand lockup image; nav = compact navbar size */
@@ -11,7 +11,7 @@ export function Logo({ variant = "full", className }: LogoProps) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/logo.png"
+      src={withBase("/logo.png")}
       alt="Nikhil Agrawal — Software Developer • AI/ML Builder"
       draggable={false}
       className={cn(

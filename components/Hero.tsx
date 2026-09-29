@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { site } from "@/data/site";
+import { withBase } from "@/lib/utils";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -43,7 +43,7 @@ export function Hero() {
               <ArrowRight size={16} />
             </a>
             <a
-              href={site.resumeHref}
+              href={withBase(site.resumeHref)}
               className="btn-ghost"
               download
               target="_blank"
@@ -123,13 +123,11 @@ function Portrait() {
       <div className="grid-bg absolute inset-6 rounded-[1.6rem] opacity-50" />
       <div className="glass relative overflow-hidden rounded-[1.75rem] border border-accent/35 p-3 shadow-[0_0_50px_rgba(79,215,204,0.12)]">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] bg-[#070707]">
-          <Image
-            src={site.profileImage}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={withBase(site.profileImage)}
             alt="Nikhil Agrawal — Software Developer and AI/ML Builder"
-            fill
-            priority
-            sizes="(max-width: 768px) 90vw, 420px"
-            className="object-cover object-top transition duration-700 hover:scale-[1.03]"
+            className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 hover:scale-[1.03]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
           <div className="pointer-events-none absolute right-4 top-4 rounded-lg border border-white/10 bg-black/40 px-2 py-1 font-mono text-[9px] tracking-widest text-accent backdrop-blur-sm">

@@ -46,5 +46,7 @@ export const seo = {
   title: "Nikhil Agrawal — Software Developer | AI/ML Builder",
   description:
     "Portfolio of Nikhil Agrawal, a Computer Science & Engineering student focused on software development, AI/ML, web applications and problem solving.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://nikhil7565.github.io/Portfolio",
 };

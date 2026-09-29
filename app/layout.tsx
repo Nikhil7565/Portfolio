@@ -32,17 +32,17 @@ export const metadata: Metadata = {
     type: "website",
     url: seo.url,
     siteName: site.name,
-    images: [{ url: "/logo.png", width: 1200, height: 630, alt: site.name }],
+    images: [{ url: "logo.png", width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: seo.title,
     description: seo.description,
-    images: ["/logo.png"],
+    images: ["logo.png"],
   },
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "logo.png",
+    apple: "logo.png",
   },
 };
 
@@ -57,7 +57,7 @@ const jsonLd = {
     name: site.education.school,
   },
   url: seo.url,
-  sameAs: [site.linkedin].filter(Boolean),
+  sameAs: [site.linkedin, site.github].filter(Boolean),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { site } from "@/data/site";
+import { withBase } from "@/lib/utils";
 
 export function Navbar() {
   const [compact, setCompact] = useState(false);
@@ -85,7 +86,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href={site.resumeHref}
+            href={withBase(site.resumeHref)}
             download
             target="_blank"
             rel="noopener noreferrer"
@@ -130,7 +131,7 @@ export function Navbar() {
               ))}
               <li>
                 <a
-                  href={site.resumeHref}
+                  href={withBase(site.resumeHref)}
                   download
                   target="_blank"
                   rel="noopener noreferrer"
